@@ -1,0 +1,51 @@
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 200 to 800
+
+.dosis-<uniquifier> {
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+body{
+    font-family: "Dosis", sans-serif;
+    background-color:#F2E5BF ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+.container{
+    text-align: center;
+}
+h1{
+    font-size: 36px;
+    color: #333;
+}
+button{
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #CB6040;
+    font-family: "Dosis", sans-serif;
+    font-weight: bolder;
+    margin: 20px;
+
+}
+#grid-container{
+    display: flex;
+    /* ensuring grid item wrap */
+    flex-wrap: wrap;
+    width: 535px;
+    height: 535px;
+    border: 2px solid #333;
+}
+
+.grid-square{
+    border: 1px solid #ccc;
+    /* ensuring padding and border are included in width/height */
+    box-sizing: border-box;
+}
