@@ -55,6 +55,7 @@ button{
     height: 550px;
     box-sizing: border-box;
     overflow: hidden;
+    border: 2px solid black;
 }
 
 .grid-square{

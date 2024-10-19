@@ -19,11 +19,6 @@ function createGrid(size){
         container.appendChild(square);
     }
 }
-// Function to adjust grid when the window is resized
-window.addEventListener('resize', () => {
-    const gridSize = document.querySelectorAll('.grid-square').length ** 0.5; // Get the current grid size
-    createGrid(gridSize); // Recreate the grid based on new size
-});
 
 // Function to add hover effect
 function addHoverEffect(square){
@@ -90,6 +85,7 @@ document.getElementById('reset-color-btn').addEventListener('click',()=>{
         square.addEventListener('mouseover',function(){
             square.style.backgroundColor="#333";
             addHoverEffect(square);
+            updateHoverCount();
         });
     });
 
@@ -121,6 +117,7 @@ function darkenColor(square){
     }
     });
 }
+
 document.getElementById('darker-btn').addEventListener('click',()=>{
     const square=document.querySelectorAll('.grid-square');
 
@@ -128,10 +125,37 @@ document.getElementById('darker-btn').addEventListener('click',()=>{
         darkenColor(square);
     });
 });
+
+//remove border button
 document.getElementById("remove-border-btn").addEventListener('click',()=>{
-    const gridContainer=document.getElementById('grid-container');
-    gridContainer.style.border=gridContainer.style.border?'':none;
-;});
+    const square=document.querySelectorAll('.grid-square');
+    square.forEach(square=>{
+        if(square.style.border==='none'){
+            square.style.border='0.5px solid #0b0b0b';
+        }else{
+            square.style.border='none';
+        }
+
+    });
+
+});
+
+//add erase functionality
+document.getElementById('erase-btn').addEventListener('click',()=>{
+    const square=document.querySelectorAll('.grid-square');
+
+    square.forEach(square=>{
+        square.addEventListener('mouseover',function(){
+            if(square.classList.contains('hovered')){
+                square.style.backgroundColor='#F2E5BF';
+                square.classList.remove('hovered');
+                updateHoverCount();
+
+            }
+
+        });
+    });
+});
 
 
 let hoverCount=0;
