@@ -1,5 +1,5 @@
-// <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 200 to 800
+/* // <uniquifier>: Use a unique and descriptive class name
+/* // <weight>: Use a value from 200 to 800 */ */
 
 .dosis-<uniquifier> {
   font-family: "Dosis", sans-serif;
@@ -18,14 +18,20 @@ body{
     margin: 0;
 }
 .container{
-    text-align: center;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: flex-start;
+
 }
 h1{
     font-size: 36px;
     color: #333;
 }
 button{
-    padding: 10px 20px;
+    width: 170px;
+    height: 50px;
+    padding: 5px 0px;
     font-size: 20px;
     cursor: pointer;
     border: none;
@@ -33,19 +39,39 @@ button{
     font-family: "Dosis", sans-serif;
     font-weight: bolder;
     margin: 20px;
-
+    text-align: center;
 }
-#grid-container{
+#hover-count{
+    font-family: "Dosis", sans-serif;
+    padding: 5px 0px;
+    font-size: 20px;
+    margin: 20px;
+    text-align: center;
+}
+#grid-container {
     display: flex;
-    /* ensuring grid item wrap */
     flex-wrap: wrap;
-    width: 535px;
-    height: 535px;
-    border: 2px solid #333;
+    width: 550px;
+    height: 550px;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .grid-square{
-    border: 1px solid #ccc;
-    /* ensuring padding and border are included in width/height */
+    border: 0.5px solid #0b0b0b;
+    box-sizing: border-box;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+    
+}
+.control{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-top: 0%;
+    width: 40%;
+    max-height: 550px;
     box-sizing: border-box;
 }
+
