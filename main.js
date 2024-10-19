@@ -24,7 +24,7 @@ function createGrid(size){
 function addHoverEffect(square){
     square.addEventListener('mouseover',function(){
         if(!square.classList.contains('hovered')){
-            square.style.backgroundColor='#333';
+            square.style.backgroundColor='#E7FBE6';
             square.classList.add('hovered');
             updateHoverCount();
         }
@@ -83,7 +83,7 @@ document.getElementById('reset-color-btn').addEventListener('click',()=>{
 
     square.forEach(square =>{
         square.addEventListener('mouseover',function(){
-            square.style.backgroundColor="#333";
+            square.style.backgroundColor='#E7FBE6';
             addHoverEffect(square);
             updateHoverCount();
         });
@@ -131,7 +131,7 @@ document.getElementById("remove-border-btn").addEventListener('click',()=>{
     const square=document.querySelectorAll('.grid-square');
     square.forEach(square=>{
         if(square.style.border==='none'){
-            square.style.border='0.5px solid #0b0b0b';
+            square.style.border='0.5px solid #257180';
         }else{
             square.style.border='none';
         }
@@ -147,7 +147,7 @@ document.getElementById('erase-btn').addEventListener('click',()=>{
     square.forEach(square=>{
         square.addEventListener('mouseover',function(){
             if(square.classList.contains('hovered')){
-                square.style.backgroundColor='#F2E5BF';
+                square.style.backgroundColor='';
                 square.classList.remove('hovered');
                 updateHoverCount();
 
@@ -156,7 +156,13 @@ document.getElementById('erase-btn').addEventListener('click',()=>{
         });
     });
 });
+const clickSound = document.getElementById('click-sound');
 
+document.querySelectorAll('button').forEach(button => {
+    button.addEventListener('click', () => {
+        clickSound.play();
+    });
+});
 
 let hoverCount=0;
 createGrid(16);
